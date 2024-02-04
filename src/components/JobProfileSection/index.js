@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { BsSearch } from 'react-icons/bs'
+import Loader from "react-js-loader";
 import Cookies from 'js-cookie'
 import JobCard from '../JobCard'
 import JobsFilterGroup from '../JobsFilterGroup'
@@ -209,7 +210,9 @@ class JobProfileSection extends Component {
   )
 
   renderLoadingView = () => (
-   <h3>Loading.....</h3>
+     <div className='profile-loader-container'>
+    <Loader type="hourglass" bgColor="red"  size={100} />
+    </div>
   )
 
   renderJobProfileDetailsList = () => {

@@ -1,6 +1,9 @@
 import {AiFillStar} from 'react-icons/ai'
+import { useEffect } from 'react'
 import {BsBriefcaseFill} from 'react-icons/bs'
 import {GoLocation} from 'react-icons/go'
+import { Link,withRouter } from 'react-router-dom'
+
 import './index.css'
 
 const SimilarJobItem = props => {
@@ -11,12 +14,20 @@ const SimilarJobItem = props => {
     jobDescription,
     location,
     title,
-    rating,
+    rating,id,
   } = jobDetails
+  // const { match } = props
+  //   const { params } = match
+  //   const { id } = params
+console.log("id",id)
 
+useEffect(()=>{},[id])
+  
   return (
     <li className="similar-list-docs">
-      <div className="logo-container">
+     <Link to={`/jobs/${id}`} className="link-item">
+     {/* <Link to="/jobs" className="link-item"> */}
+    <div className="logo-container">
         <img
           src={companyLogoUrl}
           alt="similar job company logo"
@@ -42,8 +53,10 @@ const SimilarJobItem = props => {
           <p className="location-desc">{employmentType}</p>
         </div>
       </div>
+    </Link>
+      
     </li>
   )
 }
 
-export default SimilarJobItem
+export default withRouter(SimilarJobItem)

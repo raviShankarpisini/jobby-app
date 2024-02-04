@@ -4,6 +4,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { GoLocation } from 'react-icons/go'
 import { BsBriefcaseFill } from 'react-icons/bs'
 import { BiLinkExternal } from 'react-icons/bi'
+import Loader from "react-js-loader";
 
 import SkillsCard from '../SkillsCard'
 import Header from '../Header'
@@ -200,7 +201,9 @@ class JobItemDetails extends Component {
 
   renderLoadingView = () => (
   
-      <h3>loading.....</h3>
+     <div className='profile-loader-container'>
+    <Loader type="hourglass" bgColor="red"  size={100} />
+    </div>
   )
 
   renderJobViews = () => {

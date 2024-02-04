@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Cookies from 'js-cookie'
+import Loader from "react-js-loader";
 import './index.css'
 
 const apiStatusConstants = {
@@ -61,7 +62,10 @@ class ProfileDetails extends Component {
   }
 
   renderLoadingView = () => (
-<h3>Loading.....</h3>
+   
+     <div className='profile-loader-container'>
+    <Loader type="hourglass" bgColor="red"  size={100} />
+    </div>
   )
 
   renderFailureView = () => (
