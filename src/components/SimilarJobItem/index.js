@@ -16,16 +16,9 @@ const SimilarJobItem = props => {
     title,
     rating,id,
   } = jobDetails
-  // const { match } = props
-  //   const { params } = match
-  //   const { id } = params
-console.log("id",id)
-
-useEffect(()=>{},[id])
-  
   return (
     <li className="similar-list-docs">
-     <Link to={`/jobs/${id}`} className="link-item">
+     {/* <Link to={`/jobs/${id}`} className="link-item"> */}
      {/* <Link to="/jobs" className="link-item"> */}
     <div className="logo-container">
         <img
@@ -53,7 +46,7 @@ useEffect(()=>{},[id])
           <p className="location-desc">{employmentType}</p>
         </div>
       </div>
-    </Link>
+    {/* </Link> */}
       
     </li>
   )
